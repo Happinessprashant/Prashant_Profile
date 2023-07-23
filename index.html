@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+
+    <html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.8">
+        <title>responsive personal portfolio website design tutorail</title>
+        
+        <!-- <link rel="stylesheet" href="path/to/font-awesome/css/all.min.css"> -->
+
+        <!-- <l-- font awesome cdn link --> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+        
+        <link rel="stylesheet"  href="style.css" >
+        <!-- <link rel="stylesheet"  href="css/style.css" > -->
+                                         
+        <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+
+    
+    
+    </head>
+    <body>
+
+        <header>
+            <div class="user">
+                <img src="img/1IMG_32131.jpg" alt="">
+                <h3 class="name">Prashant Jadhav</h3>
+                <p class="post">front end developer</p>
+                <p class="post">Automation Tester</p>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#home">home</a></li>
+                    <li><a href="#about">about</a></li>
+                    <li><a href="#education">education</a></li>
+                    <li><a href="#Documents">Documents</a></li>
+                    <li><a href="#portfolio">portfolio</a></li>
+                    <li><a href="#contact">contact</a></li>
+                </ul>
+            </nav>
+        </header>
+            <!-- <!  > -->
+
+    <div  id="menu" class="fa fa-bars"></div>
+    <!-- <div id="menu" class="fa fa-bars" ></div> --> 
+   
+
+    <!-- Home section Start -->
+    <section class="home" id="home">
+
+        <h3>HI THERE !</h3>
+    
+        <h1>I'M <span>Prashant Jadhav</span></h1>
+    
+        <p>“Currently I am pursuing my master’s in computer science. I have done 15 short-term and long-term projects during my academics,
+             giving me a deep understanding and valuable insights into a few areas of computer science.</p>
+    
+        <a href="#about"><button class="btn">about me <i class="fas fa-user"></i></button></a>
+    
+    </section>
+    
+    <!-- home section ends -->
+        
+        <!-- About section start -->
+
+        <section class="about" id="about">
+            <h1 class="heading"> <span>about</span> me </h1>
+            <div class="row">
+                <div class="info">
+                    <h3><span>name :</span>Prashant Jadhav</h3>
+                    <h3><span>age :</span> 23</h3>
+                    <h3><span>qualification :</span> MCA</h3>
+                    <h3><span>post :</span> front end developer</h3>
+                    <h3><span>language :</span>English ,Marathi ,  hindi </h3>
+                    <a href="#">
+                        <button class="btn" id="downloadButton"> download CV <i class="fas fa-download"></i> </button>
+                    </a>
+                </div>
+
+                <div class="counter">
+                    <div class="box">
+                        <span>01</span>
+                        <h3>years of experience</h3>
+                    </div>
+                    <div class="box">
+                        <span>10</span>
+                        <h3>Project completed</h3>
+                    </div>
+                    <div class="box">
+                        <span>100%</span>
+                        <h3>Happy clients</h3>
+                    </div>
+                    <div class="box">
+                        <span>0</span>
+                        <h3>Awards won</h3>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- JavaScript -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+        const downloadButton = document.getElementById("downloadButton");
+        downloadButton.addEventListener("click", function() {
+            // Replace 'path/to/your/resume.pdf' with the actual path to your resume file
+            const resumeUrl = 'resume/prashant jadhav cv.pdf';
+            
+            // Create an anchor element to initiate the download
+            const link = document.createElement("a");
+            link.href = resumeUrl;
+            link.download = "your_resume.pdf"; // Replace with your desired file name
+        
+            // Append the link to the DOM and trigger the download
+            document.body.appendChild(link);
+            link.click();
+        
+            // Clean up: remove the link from the DOM after the download
+            document.body.removeChild(link);
+        });
+        });
+        </script>
+    
+        <!-- About section end -->
+
+ 
+        <!-- education section starts -->
+
+        <section class="education" id="education">
+
+            <h1 class="heading">My <span>education</span></h1>
+            
+        <div class="box-container">
+
+            <div class="box">
+                <i class="fas fa-graduation-cap"></i>
+                <span>2017k</span>
+                <h3>S.S.C</h3>
+                <p>I was Completed my S.S.C from The Maharashtra State Board of Secondary & Higher Secondary Education in March 2017  </p>
+            </div>
+
+            <div class="box">
+                <i class="fas fa-graduation-cap"></i>
+                <span>2019K</span>
+                <h3>H.S.C</h3>
+                <p>I was Completed my S.S.C from The Maharashtra State Board of Secondary & Higher Secondary Education in Feb 2019</p>
+            </div>
+
+            <div class="box">
+                <i class="fas fa-graduation-cap"></i>
+                <span>2022K</span>
+                <h3>Bsc-Computer-Science</h3>
+                <p>I was Completed my Bsc-Computer-Science  from   Shivaji University Kolhapur in MARCH-2022   </p>
+            </div>
+
+            <div class="box">
+                <i class="fas fa-graduation-cap"></i>
+                <span>2024K</span>
+                <h3>MCA</h3>
+                <p>Now , I am purchasing MCA from D.Y.Patil Agriculture & technical university</p>
+            </div>
+
+            <div class="box">
+                <i class="fas fa-graduation-cap"></i>
+                <span>2024K</span>
+                <h3>Python</h3>
+                <p>I was Completed the python certification Course </p>
+            </div>
+
+            <div class="box">
+                <i class="fas fa-graduation-cap"></i>
+                <span>2024K</span>
+                <h3>Cypress-Modern Automation Testing tool</h3>
+                <p>I am  successfully completing the course Cypress-Modern Automation Testing tool from Infosys SpringBoard
+                </p>
+            </div>
+
+        </div>
+            
+        </section>
+    
+    <!-- education section ends -->
+    
+    
+    <!-- education Documents starts -->
+
+        
+    <section class="education" id="Documents">
+
+        <h1 class="heading">My <span>Education Documents</span></h1>
+        
+    <div class="box-container">
+
+        <div class="box">
+            <i class="fas fa-graduation-cap"></i>
+            <span>2017k</span>
+            <h3>S.S.C</h3>
+             <p> <img src="Documents\SSC.jpg" class="doc" alt="">
+            </p>
+            <a href="#">
+                <button class="btn" id="btnssc"> download SSC <i class="fas fa-download"></i> </button>
+            </a>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-graduation-cap"></i>
+            <span>2019K</span>
+            <h3>H.S.C</h3>
+            <p> <img src="Documents\HSC.jpg" class="doc" alt="">
+            </p>
+            <a href="#">
+                <button class="btn" id="btnhsc"> download HSC <i class="fas fa-download"></i> </button>
+            </a>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-graduation-cap"></i>
+            <span>2022K</span>
+            <h3>Bsc-Computer-Science</h3>
+            <!-- <p> <img src="Documents\SSC.jpg" class="doc" alt=""> -->
+            </p>
+            <a href="#">
+                <button class="btn" id="btnbsc"> download Bsc <i class="fas fa-download"></i> </button>
+            </a>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-graduation-cap"></i>
+            <span>2024K</span>
+            <h3>MCA</h3>
+            <p> <img src="Documents\SSC.jpg" class="doc" alt="">
+            </p>
+            <a href="#">
+                <button class="btn" id="btnmca"> download MCA <i class="fas fa-download"></i> </button>
+            </a>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-graduation-cap"></i>
+            <span>2024K</span>
+            <h3>Python</h3>
+            <p> <img src="Documents\python.png" class="doc" alt="">
+            </p>
+            <a href="#">
+                <button class="btn" id="btnpython"> download Python  <i class="fas fa-download"></i> </button>
+            </a>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-graduation-cap"></i>
+            <span>2024K</span>
+            <h3>Cypress-Modern Automation Testing tool</h3>
+            <p> <img src="Documents\cypress.png" class="doc" alt="">
+            </p>
+            <a href="#">
+                <button class="btn" id="btncypress"> download Cypress <i class="fas fa-download"></i> </button>
+            </a>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-graduation-cap"></i>
+            <span>2023K</span>
+            <h3>Happinest Minds's Computation </h3>
+            <p> <img src="Documents\Happinest_Minds's_Computation.png" class="doc" alt="">
+            </p>
+            <a href="#">
+                <button class="btn" id="btnhmc"> download Cypress <i class="fas fa-download"></i> </button>
+            </a>
+        </div>
+
+    </div>
+        
+    </section>
+
+
+    <!-- scrpt start  -->
+    
+    <script>
+        // Function to download a file using JavaScript
+        function downloadFile(fileUrl, fileName) {
+            const link = document.createElement('a');
+            link.href = fileUrl;
+            link.download = fileName;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        // Add event listeners to the buttons
+        document.getElementById('btnssc').addEventListener('click', function (event) {
+            event.preventDefault();
+            downloadFile('Documents/SSC.jpg', 'SSC.jpg');
+        });
+
+        document.getElementById('btnhsc').addEventListener('click', function (event) {
+            event.preventDefault();
+            downloadFile('Documents/HSC.jpg', 'HSC.jpg');
+        });
+
+        document.getElementById('btnbsc').addEventListener('click', function (event) {
+            event.preventDefault();
+            downloadFile('Documents/Bsc-Computer-Science.pdf', 'Bsc-Computer-Science.pdf');
+        });
+        //
+        document.getElementById('python.png').addEventListener('click', function (event) {
+            event.preventDefault();
+            downloadFile('Documents/python.png', 'python.png');
+        });
+
+        document.getElementById('btncypress').addEventListener('click', function (event) {
+            event.preventDefault();
+            downloadFile('Documents/cypress.png', 'cypress.png');
+        });
+
+        document.getElementById('btnhmc').addEventListener('click', function (event) {
+            event.preventDefault();
+            downloadFile("Documents/Happinest_Minds's_Computation.png", "Happinest_Minds's_Computation.png");
+        });
+
+        // Add event listeners to other buttons similarly for other documents...
+    </script>
+    <!-- scrpt end  -->
+
+
+    <!-- education Documents ends -->
+
+
+    
+
+
+        <!-- portfolio section starts -->
+
+            <section class="portfolio" id="portfolio">
+
+                <h1 class="heading"> my <span>portfolio</span> </h1>
+
+                <div class="box-container">
+
+                    <div class="box">
+                        <img src="img/img1.png" alt="">
+                    </div>
+
+                    <div class="box">
+                        <img src="img/img2.png" alt="">
+                    </div>
+
+                    <div class="box">
+                        <img src="img/img4.png" alt="">
+                    </div>
+
+                    <div class="box">
+                        <img src="img/img5.png" alt="">
+                    </div>
+
+                    <div class="box">
+                        <img src="img/img6.png" alt="">
+                    </div>
+
+                    
+
+                </div>
+
+            </section>
+
+<!-- portfolio section ends -->
+
+
+
+<!-- contact section starts -->
+            <section class="contact" id="contact">
+
+                <h1 class="heading"><span>contact</span> me</h1>
+
+                <div class="row">
+                    <div class="content">
+                
+                        <h3 class="title">contact info</h3>
+                
+                        <div class="info">
+                            <h3><i class="fas fa-envelope"></i> prashantjadhav9089@gmail.com</h3>
+                            <h3><i class="fas fa-phone"></i> +91-8459907108</h3>
+                            <h3><i class="fas fa-phone"></i> +91-9145379089</h3>
+                            <h3><i class="fas fa-map-marker-alt"></i> Kolhapur, india 416212</h3>
+                        </div>
+                
+                    </div>
+
+                    <!-- <form action="">
+                        <input type="text" placeholder="name" class="box">
+                        <input type="email" placeholder="email" class="box">
+                        <input type="text" placeholder="project" class="box">
+                        <textarea name="" id="" cols="30" rows="10" class="box message" placeholder="message"></textarea>
+                        <button type="submit" class="btn" id="send"> send <i class="fas fa-paper-plane"></i> </button>
+                    </form> -->
+                    <form id="myForm">
+                        <input type="text" placeholder="name" class="box" name="name">
+                        <input type="email" placeholder="email" class="box" name="email">
+                        <input type="text" placeholder="project" class="box" name="project">
+                        <textarea name="message" id="" cols="30" rows="10" class="box message" placeholder="message"></textarea>
+                        <button type="submit" class="btn" onclick="sendMessage()">Send <i class="fas fa-paper-plane"></i></button>
+                    </form>
+
+                </div>
+            
+            </section>
+
+            <!-- <script the send message to me start> -->
+                
+                
+              <script>
+                function sendMessage() {
+                    const slackWebhookUrl =  'https://hooks.slack.com/services/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';
+                    //const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+
+                    const payload = {
+                        text: 'Hello, World!'
+                    };
+        
+                    fetch( slackWebhookUrl, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(payload)
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            console.log('Message sent to Slack successfully.');
+                        } else {
+                            console.error('Failed to send message to Slack.');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error sending message:', error);
+                    });
+                }
+            </script>
+            <!-- <script the send message to me end> -->
+
+
+  <!-- contact section ends -->
+
+        <!-- scroll top button -->
+        <a href="#home" class="top">
+            <!-- <img src="img/icons8-launch-96.png" alt="Scroll Top"> -->
+            <img src="img/icons8-launch-48.png" alt="Scroll Top">
+            <!-- <img src="img/icons8-launch.gif" alt="Scroll Top"> -->
+        </a>
+
+ 
+ 
+
+
+
+
+    <!-- <!jquery> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <script src="script.js" ></script>
+    <!-- <script href="/script.js"></script> -->
+
+
+    </body>
+    </html>
