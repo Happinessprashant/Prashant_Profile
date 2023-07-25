@@ -266,7 +266,7 @@
             <p> <img src="Documents\Happinest_Minds's_Computation.png" class="doc" alt="">
             </p>
             <a href="#">
-                <button class="btn" id="btnhmc"> download Cypress <i class="fas fa-download"></i> </button>
+                <button class="btn" id="btnhmc"> download certificate <i class="fas fa-download"></i> </button>
             </a>
         </div>
 
@@ -304,21 +304,7 @@
             downloadFile('Documents/Bsc-Computer-Science.pdf', 'Bsc-Computer-Science.pdf');
         });
         //
-        document.getElementById('python.png').addEventListener('click', function (event) {
-            event.preventDefault();
-            downloadFile('Documents/python.png', 'python.png');
-        });
-
-        document.getElementById('btncypress').addEventListener('click', function (event) {
-            event.preventDefault();
-            downloadFile('Documents/cypress.png', 'cypress.png');
-        });
-
-        document.getElementById('btnhmc').addEventListener('click', function (event) {
-            event.preventDefault();
-            downloadFile("Documents/Happinest_Minds's_Computation.png", "Happinest_Minds's_Computation.png");
-        });
-
+        
         // Add event listeners to other buttons similarly for other documents...
     </script>
     <!-- scrpt end  -->
@@ -387,56 +373,119 @@
                 
                     </div>
 
-                    <!-- <form action="">
-                        <input type="text" placeholder="name" class="box">
-                        <input type="email" placeholder="email" class="box">
-                        <input type="text" placeholder="project" class="box">
-                        <textarea name="" id="" cols="30" rows="10" class="box message" placeholder="message"></textarea>
-                        <button type="submit" class="btn" id="send"> send <i class="fas fa-paper-plane"></i> </button>
-                    </form> -->
                     <form id="myForm">
-                        <input type="text" placeholder="name" class="box" name="name">
-                        <input type="email" placeholder="email" class="box" name="email">
-                        <input type="text" placeholder="project" class="box" name="project">
-                        <textarea name="message" id="" cols="30" rows="10" class="box message" placeholder="message"></textarea>
-                        <button type="submit" class="btn" onclick="sendMessage()">Send <i class="fas fa-paper-plane"></i></button>
+                        <form id="contactForm">
+                            <input type="text" placeholder="Name" class="box" name="name">
+                            <input type="email" placeholder="Email" class="box" name="email">
+                            <input type="text" placeholder="Project" class="box" name="project">
+                            <textarea name="message" cols="30" rows="10" class="box message" placeholder="Message"></textarea>
+                            <button type="submit" class="btn" onclick="sendMessage()">Send <i class="fas fa-paper-plane"></i></button>
+                            <div id="data"></div>
+                        </form>
                     </form>
-
                 </div>
             
             </section>
 
+            
             <!-- <script the send message to me start> -->
-                
-                
-              <script>
-                function sendMessage() {
-                    const slackWebhookUrl =  'https://hooks.slack.com/services/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';
-                    //const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
 
-                    const payload = {
-                        text: 'Hello, World!'
-                    };
-        
-                    fetch( slackWebhookUrl, {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify(payload)
-                    })
-                    .then(response => {
-                        if (response.ok) {
-                            console.log('Message sent to Slack successfully.');
-                        } else {
-                            console.error('Failed to send message to Slack.');
-                        }
-                    })
-                    .catch(error => {
-                        console.error('Error sending message:', error);
-                    });
-                }
-            </script>
+                <script>
+                    function sendMessage() {
+                        const form = document.getElementById("contactForm");
+                        const formData = new FormData(form);
+                        const name = formData.get("name");
+                        const email = formData.get("email");
+                        const project = formData.get("project");
+                        const message = formData.get("message");
+                
+                        // Replace 'YOUR_SLACK_WEBHOOK_URL' with your actual Slack webhook URL
+                        const slackWebhookUrl = "https://hooks.slack.com/services/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"
+                
+                        const payload = {
+                            text: "New Contact Form Submission",
+                            blocks: [
+                                {
+                                    type: "section",
+                                    fields: [
+                                        { type: "mrkdwn", text: `*Name:* ${name}` },
+                                        { type: "mrkdwn", text: `*Email:* ${email}` },
+                                        { type: "mrkdwn", text: `*Project:* ${project}` },
+                                        { type: "mrkdwn", text: `*Message:* ${message}` },
+                                    ]
+                                }
+                            ]
+                        };
+                
+                        fetch('https://cors-anywhere.herokuapp.com/' + slackWebhookUrl, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify(payload),
+                        })
+                        .then(response => {
+                            if (response.ok) {
+                                console.log('Message sent successfully to Slack.');
+                            } else {
+                                console.error('Error sending message to Slack:', response.status);
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Error sending message to Slack:', error);
+                        });
+                    }
+                </script>
+                
+                <!-- <script>
+                    function sendMessage() {
+                        const form = document.getElementById("contactForm");
+                       // const formData = new FormData(form);
+                        const name = document.querySelector('input[name="name"]').value;
+                        const email = document.querySelector('input[name="email"]').value;0
+                        const project = document.querySelector('input[name="project"]').value;
+                        const message = document.querySelector('textarea[name="message"]').value;
+            
+                        // Replace 'YOUR_SLACK_WEBHOOK_URL' with your actual Slack webhook URL
+                        const slackWebhookUrl = "https://hooks.slack.com/services/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"
+            
+                        const payload = {
+                            text: "New Contact Form Submission",
+                            blocks: [
+                                {
+                                    type: "section",
+                                    fields: [
+                                            { type: "mrkdwn", text: `*Name:* ${name}` },
+                                            { type: "mrkdwn", text: `*Email:* ${email}` },
+                                            { type: "mrkdwn", text: `*Project:* ${project}` },
+                                            { type: "mrkdwn", text: `*Message:* ${message}` },
+                                        ]
+                                }
+                            ]
+                        };
+            
+                        fetch('https://cors-anywhere.herokuapp.com/' + slackWebhookUrl, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify(payload),
+                        })
+                        .then(response => {
+                            if (response.ok) {
+                                console.log('Message sent successfully to Slack.');
+                                
+                            } else {
+                                console.error('Error sending message to Slack:', response.status);
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Error sending message to Slack:', error);
+                        });
+                    }
+                </script>
+               -->
+            
             <!-- <script the send message to me end> -->
 
 
